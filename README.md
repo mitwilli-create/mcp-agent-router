@@ -76,7 +76,7 @@ Scope is the enemy of shipped. Finance had the clearest problem definition, the 
 - Plaid (Finance agent)
 - Apple Health (Health agent, planned)
 
-## Repo structure
+## Repo structure (planned)
 
 ```
 personal-os/
