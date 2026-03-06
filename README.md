@@ -1,6 +1,6 @@
 # Personal OS
 
-A multi-agent system for personal life management. Six specialist agents, one conversational interface, coordinated through a central MCP router.
+Six specialist agents, one conversational interface, coordinated through a central MCP router. A personal life management system that actually talks to itself.
 
 **Status:** Architecture complete. Finance agent spun out as a standalone product → [finance-cli](https://github.com/mitwilli-create/finance-cli). Wardrobe agent at ~40%.
 
@@ -8,7 +8,7 @@ A multi-agent system for personal life management. Six specialist agents, one co
 
 Managing life across multiple domains — finance, health, career, wardrobe, communications — means constant context-switching between different tools that don't talk to each other. Each domain has its own data, its own logic, its own interface.
 
-The useful insights are often cross-domain. Your health affects your wardrobe constraints. Your calendar affects your financial decisions. Your career stage affects everything. No single tool sees all of it.
+The useful insights live across domains. Your health affects your wardrobe constraints. Your calendar affects your financial decisions. Your career stage affects everything. No single tool sees all of it.
 
 ## Architecture
 
@@ -22,7 +22,7 @@ The router handles four things:
 
 ### Data boundary spec
 
-Cross-agent context sharing is explicit and permission-based. Agents only get what they need.
+Agents share context explicitly, permission-based. They only get what they need.
 
 | Agent | Can request from | Can't access |
 |---|---|---|
@@ -31,7 +31,7 @@ Cross-agent context sharing is explicit and permission-based. Agents only get wh
 | Wardrobe | Weather (external API) | Career data |
 | Career | Communications (Voice) | Medical data |
 
-This prevents the failure mode where agents accumulate more context than necessary — which degrades retrieval quality and creates privacy risks.
+Without this, agents accumulate more context than they need — degrading retrieval quality and creating privacy risks.
 
 ### The six agents
 
